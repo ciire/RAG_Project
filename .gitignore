@@ -1,0 +1,22 @@
+# 1. Virtual Environment (The biggest "must-ignore")
+rag-env/
+.venv/
+venv/
+ENV/
+
+# 2. Python Bytecode (Generated automatically by Python)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 3. Local Databases (ChromaDB stores its data here)
+db/
+chroma/
+
+# 4. OS-specific temporary files
+.DS_Store
+Thumbs.db
+
+# 5. Environment Variables (Where you'll keep API keys later)
+.env

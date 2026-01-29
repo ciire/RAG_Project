@@ -1,0 +1,17 @@
+# --- Core RAG Framework ---
+langchain
+langchain-community
+langchain-text-splitters
+langchain-huggingface
+
+# --- Data Ingestion & Parsing ---
+unstructured[md]
+markdown
+pypdf
+
+# --- Vector Database ---
+chromadb
+
+# --- UI & Environment ---
+streamlit
+python-dotenv
