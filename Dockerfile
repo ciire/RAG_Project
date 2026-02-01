@@ -23,4 +23,4 @@ COPY . .
 ENV PYTHONUNBUFFERED=1
 
 # 7. Command to run your app
-CMD ["python", "src/ingest.py"]
+CMD ["python", "src/main.py"]

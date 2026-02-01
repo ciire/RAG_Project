@@ -1,6 +1,7 @@
 import os
 from langchain_community.document_loaders import DirectoryLoader, UnstructuredMarkdownLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter, Language
+from database import save_to_chroma
 
 def ingest_react_repo():
     # 1. Define the path to the 'content' directory
@@ -8,7 +9,8 @@ def ingest_react_repo():
     
     # 2. Use DirectoryLoader to find all Markdown/MDX files
     # show_progress=True is great for long loads so you know it's working
-    print("--- Loading local React documents ---")
+    print("--- Loading local React documents --"
+    "-")
     loader = DirectoryLoader(
         content_path, 
         glob="**/*.md*", # Finds both .md and .mdx
@@ -31,4 +33,5 @@ def ingest_react_repo():
     return chunks
 
 if __name__ == "__main__":
-    ingest_react_repo()
+    chunks = ingest_react_repo()
+    save_to_chroma(chunks)

@@ -3,6 +3,7 @@ langchain
 langchain-community
 langchain-text-splitters
 langchain-huggingface
+sentence-transformers
 
 # --- Data Ingestion & Parsing ---
 unstructured[md]

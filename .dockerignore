@@ -2,4 +2,5 @@ rag-env/
 __pycache__/
 .git/
 .env
-db/
+chroma_db/
+react.dev/

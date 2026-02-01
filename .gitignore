@@ -11,8 +11,7 @@ __pycache__/
 *.pyd
 
 # 3. Local Databases (ChromaDB stores its data here)
-db/
-chroma/
+chroma_db/
 
 # 4. OS-specific temporary files
 .DS_Store
@@ -20,3 +19,4 @@ Thumbs.db
 
 # 5. Environment Variables (Where you'll keep API keys later)
 .env
+/react.dev
