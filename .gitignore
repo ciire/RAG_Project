@@ -19,4 +19,6 @@ Thumbs.db
 
 # 5. Environment Variables (Where you'll keep API keys later)
 .env
+
+# 6. External data
 /react.dev
