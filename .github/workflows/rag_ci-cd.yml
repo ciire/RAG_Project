@@ -25,5 +25,4 @@ jobs:
         with:
           context: .
           push: true
-          # Replace 'yourusername' with your actual Docker Hub username
-          tags: yourusername/rag-project:latest
+          tags: chuechu/rag-project:latest
