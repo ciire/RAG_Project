@@ -28,3 +28,17 @@ def load_chroma():
         persist_directory=PERSIST_DIR,
         embedding_function=get_embedding_function()
     )
+
+def query_db(query_text, k=3):
+    """
+    Search for the most relevant chunks in ChromaDB.
+    Returns a list of (Document, score) tuples.
+    """
+    # 1. Load the database connection
+    db = load_chroma()
+    
+    # 2. Perform the similarity search
+    # This automatically handles the embedding of the query_text
+    results = db.similarity_search_with_score(query_text, k=k)
+    
+    return results

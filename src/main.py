@@ -1,25 +1,21 @@
 import os
 from ingest import ingest_react_repo
-from database import save_to_chroma, load_chroma, PERSIST_DIR
+from database import save_to_chroma, PERSIST_DIR
+from app import generate_answer # Import the "Brain"
+
 
 def main():
-    # 1. Check if the database folder exists in your project root
+    # 1. Check if the database folder exists
+
     if not os.path.exists(PERSIST_DIR):
         print("--- No existing database found. Initializing ingestion... ---")
-        
-        # Call your existing function from ingest.py
         chunks = ingest_react_repo()
-        
-        # Save them using the logic in database.py
         save_to_chroma(chunks)
         print("--- Database created successfully. ---")
     else:
-        print("--- Found existing database. Loading... ---")
+        print("--- Found existing database. ---")
 
-    # 2. Load the vector store using your database.py function
-    db = load_chroma()
-
-    # 3. Interactive Query Loop
+    # 2. Interactive Query Loop
     print("\nReact Docs AI is ready. (Type 'quit' or 'exit' to stop)")
     
     while True:
@@ -32,19 +28,15 @@ def main():
         if not query_text.strip():
             continue
 
-        # 4. Search the database
-        # k=3 retrieves the top 3 most relevant segments
-        print(f"--- Searching for: {query_text} ---")
-        results = db.similarity_search(query_text, k=3)
+        # 3. Call the AI generation logic from app.py
+        # This one function handles retrieval AND the LLM response
+        print(f"--- Generating answer for: {query_text} ---")
+        answer = generate_answer(query_text)
 
-        # 5. Display the results
-        print("\n--- Top Relevant Chunks ---")
-        for i, doc in enumerate(results):
-            source = doc.metadata.get("source", "Unknown")
-            # Print a snippet of the content
-            content_snippet = doc.page_content[:400].replace('\n', ' ')
-            print(f"[{i+1}] Source: {source}")
-            print(f"    Content: {content_snippet}...\n")
+        # 4. Display the finalized answer
+        print("\n--- AI Response ---")
+        print(answer)
+        print("\n" + "="*50)
 
 if __name__ == "__main__":
     main()
