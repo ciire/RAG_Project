@@ -1,8 +1,10 @@
 name: RAG Project CI/CD
 
 on:
-  push:
-    branches: [ "main" ] # Triggers every time you push to main
+  schedule:
+    # This runs at 00:00 UTC every single day
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Optional: Adds a button to run it manually
 
 jobs:
   build-and-push:
