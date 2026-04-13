@@ -1,0 +1,10 @@
+[
+  {
+    "question": "How do I use the 'useActionState' hook to manage form state in React 19?",
+    "ground_truth": "useActionState is a Hook that allows you to update state based on the result of a form action. It takes a reducer function and initial state, returning an array with: 1. The current state, 2. A dispatch function to trigger the action, and 3. An 'isPending' boolean flag to track execution status. It replaces the older 'useFormState' hook."
+  },
+  {
+    "question": "What is the new way to handle 'ref' as a prop in React 19 components?",
+    "ground_truth": "In React 19, 'ref' is now available as a standard prop in functional components. You no longer need to use the 'forwardRef' API to pass a ref to a child component; you can simply destructure 'ref' from the component's props."
+  }
+]

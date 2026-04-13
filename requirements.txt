@@ -1,9 +1,31 @@
+# --- Core Orchestration & LLM ---
 langchain
 langchain-community
 langchain-huggingface
 langchain-chroma
+groq
+langchain-groq
+python-dotenv
+
+# --- Retrieval & Vector DB ---
+chromadb
 sentence-transformers
 rank_bm25
+
+# --- Ingestion & Parsing ---
 unstructured
 pypdf
-groq
+markdown
+beautifulsoup4
+
+# --- Evaluation & Re-ranking ---
+deepeval
+pytest
+datasets
+pandas
+sentence-transformers>=3.0.0
+
+# --- Frontend ---
+streamlit
+
+# python 3.12.10
