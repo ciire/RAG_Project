@@ -6,5 +6,13 @@
   {
     "question": "What is the new way to handle 'ref' as a prop in React 19 components?",
     "ground_truth": "In React 19, 'ref' is now available as a standard prop in functional components. You no longer need to use the 'forwardRef' API to pass a ref to a child component; you can simply destructure 'ref' from the component's props."
+  },
+  {
+  "question": "What are React 'props' and how do you use them to pass data and JSX between components?",
+  "ground_truth": "Props are read-only arguments passed from a parent component to a child to facilitate communication. You pass them in JSX like HTML attributes (e.g., <Child name='value' />) and read them in the child via destructuring: 'function Child({ name })'. Props can be any JavaScript value, including objects, arrays, and functions. Additionally, nesting JSX within a component tag passes that content as the 'children' prop. While props change over time to reflect new data, they are immutable; to update what is displayed, a component must receive a new props object from its parent."
+  },
+  {
+  "question": "What are the primary trade-offs and steps involved when building a React app 'from scratch' without a framework?",
+  "ground_truth": "Building from scratch offers total control and deep learning but essentially requires building an ad-hoc framework. Key steps include: 1. Installing a build tool (Vite, Parcel, or Rsbuild) to handle JSX and local development. 2. Implementing common patterns manually, specifically routing (React Router/TanStack), data fetching (TanStack Query/SWR), and code-splitting. A major trade-off is the difficulty of implementing advanced performance features like Server-Side Rendering (SSR), Static Site Generation (SSG), or React Server Components (RSC), which are often interconnected and require deep expertise to integrate with the router and bundler."
   }
 ]
